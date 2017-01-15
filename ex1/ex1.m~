@@ -42,6 +42,8 @@ data = load('ex1data1.txt');
 X = data(:, 1); y = data(:, 2);
 m = length(y); % number of training examples
 
+% Plot Data
+% Note: You have to complete the code in plotData.m
 plotData(X, y);
 
 fprintf('Program paused. Press enter to continue.\n');
@@ -71,7 +73,7 @@ fprintf('%f %f \n', theta(1), theta(2));
 hold on; % keep previous plot visible
 plot(X(:,2), X*theta, '-')
 legend('Training data', 'Linear regression')
-hold off
+hold off % don't overlay any more plots on this figure
 
 % Predict values for population sizes of 35,000 and 70,000
 predict1 = [1, 3.5] *theta;
@@ -102,6 +104,9 @@ for i = 1:length(theta0_vals)
     end
 end
 
+
+% Because of the way meshgrids work in the surf command, we need to 
+% transpose J_vals before calling surf, or else the axes will be flipped
 J_vals = J_vals';
 % Surface plot
 figure;
