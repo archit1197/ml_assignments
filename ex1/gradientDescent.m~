@@ -34,7 +34,7 @@ theta(2) = t2-term2;
     % ============================================================
 
     % Save the cost J in every iteration    
-    J_history(iter) = computeCost(X, y, theta)
+    J_history(iter) = computeCost(X, y, theta);
 
 end
 
